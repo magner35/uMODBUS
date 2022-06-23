@@ -1,0 +1,14 @@
+{
+  "build": {
+    "f_cpu": "4000000L",
+    "mcu": "at90s23"
+  },
+  "name": "at90s2313",
+  "upload": {
+    "part": "at90s2313",
+    "maximum_ram_size": 1024,
+    "maximum_size": 8192
+  },
+  "url": "https://www.microchip.com",
+  "vendor": "Atmel"
+}

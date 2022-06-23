@@ -10,13 +10,13 @@
 
 
 // UART parameters
-#define UART_SPEED						19200
+#define UART_SPEED						9600
 #define UART_DATA_BITS 					8
 #define UART_PARITY  					'n'
 #define UART_STOP_BITS 					1
 
 //use RS485?
-#define USE_RS485
+//#define USE_RS485
 
 // define port and pin to change TX/RX of RS485
 #define RS485_PORT_DIRECTION			PORTD
@@ -31,7 +31,7 @@
 
 
 // Modbus SLAVE address
-#define	MB_MY_SLAVE_ADDR				10
+#define	MB_MY_SLAVE_ADDR				1
 
 
 
