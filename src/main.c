@@ -64,8 +64,8 @@ uint16_t secondRegisterValue[2];
 uint8_t callbackReadHoldingRegisters(void)
 {
 
-	uint16_t registersStartAddress; // reads from MODBUS request freame
-	uint16_t registersNb;			// reads from MODBUS request freame
+	uint16_t registersStartAddress; // reads from MODBUS request frame
+	uint16_t registersNb;			// reads from MODBUS request frame
 	uint8_t bytesNb;				// calculates from data sending by master
 
 	registersStartAddress = mbUtilSwapUint16(MB_FRAME_BUFFER.RxFn03.startAddress); // requested register start address
@@ -112,8 +112,8 @@ uint8_t callbackReadHoldingRegisters(void)
 uint8_t callbackWriteHoldingRegisters(void)
 {
 
-	uint16_t registersStartAddress; // reads from MODBUS request freame
-	uint16_t registersNb;			// reads from MODBUS request freame
+	uint16_t registersStartAddress; // reads from MODBUS request frame
+	uint16_t registersNb;			// reads from MODBUS request frame
 
 	registersStartAddress = mbUtilSwapUint16(MB_FRAME_BUFFER.RxFn16.startAddress); // write register start address
 	registersNb = mbUtilSwapUint16(MB_FRAME_BUFFER.RxFn16.numberRegs);			   // number of registers to write
@@ -161,16 +161,17 @@ int main(void)
 	sei();
 	firstRegisterValue = 11; // initialize first register, it can be writing from MASTER
 	// never ending loop
-	while (1 == 1)
+	while (1)
 	{
 		// here you can set registers
 
-		secondRegisterValue[0] = 72; // second registers  for example data from 18B20 (temperature)
-		secondRegisterValue[1] = 34;
+		secondRegisterValue[0] = 0xffff; // second registers  for example data from 18B20 (temperature)
+		secondRegisterValue[1] = 0x7fff;
 		// poll modbus state-machine
 		mbPoll();
 		// here do something else
 		//...
+
 		//---
 	}
 }
