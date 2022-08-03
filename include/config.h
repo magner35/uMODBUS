@@ -16,7 +16,7 @@
 #define UART_STOP_BITS 					1
 
 //use RS485?
-//#define USE_RS485
+#define USE_RS485
 
 // define port and pin to change TX/RX of RS485
 #define RS485_PORT_DIRECTION			PORTD
